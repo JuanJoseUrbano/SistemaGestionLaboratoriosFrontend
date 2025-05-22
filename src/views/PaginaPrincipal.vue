@@ -1,74 +1,75 @@
 <template>
-    <div class="container">
-    <div class="row text-azure text-center mb-5">
-        <div class="col-sm-12 col-md-4 col-lg-6 col-lg-2 text-azure mb-5 mt-5 content-wrapper">
-            <h1>Bienvenido al {{ titulo }} de Corhuila</h1>
-            <br>
-            <h5>{{ descripcion }}</h5>
-            <img src="../assets/laboratorio_img.png" class="laboratorio-img">
-            <h1></h1>
-            <div class="menu-buttons mt-4">
-                <router-link to="/pagina-laboratorios" class="btn btn-dark">Laboratorios</router-link>
-                <router-link to="/pagina-usuarios" class="btn btn-dark">Usuarios</router-link>
-                <router-link to="/pagina-reservas" class="btn btn-dark">Reservas</router-link>
-                <router-link to="/pagina-tipos-laboratorios" class="btn btn-dark">Tipo de Laboratorios</router-link>
-                <router-link to="/pagina-roles" class="btn btn-dark">Roles</router-link>
-            </div>
+  <div class="container my-5">
+    <div class="row justify-content-center align-items-center text-center">
+      <div class="col-12 col-md-10 col-lg-8 content-wrapper p-4">
+        <h1 class="mb-3 text fw-bold">
+          Bienvenido al {{ titulo }} de Corhuila
+        </h1>
+        <p class="lead mb-4 text-secondary">
+          {{ descripcion }}
+        </p>
+        <img
+          src="../assets/laboratorio_img.png"
+          alt="Laboratorio Corhuila"
+          class="img-fluid laboratorio-img mb-4 mx-auto d-block"
+        />
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <router-link to="/pagina-laboratorios" class="btn btn-outline-dark px-4 py-2">
+            Laboratorios
+          </router-link>
+          <router-link to="/pagina-usuarios" class="btn btn-outline-dark px-4 py-2">
+            Usuarios
+          </router-link>
+          <router-link to="/pagina-reservas" class="btn btn-outline-dark px-4 py-2">
+            Reservas
+          </router-link>
+          <router-link to="/pagina-tipos-laboratorios" class="btn btn-outline-dark px-4 py-2">
+            Tipo de Laboratorios
+          </router-link>
+          <router-link to="/pagina-roles" class="btn btn-outline-dark px-4 py-2">
+            Roles
+          </router-link>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'MyComponent',
-    data() {
-        return {
-            titulo : 'Sistema de gestión Laboratorio',
-            descripcion: 'Este sistema permitirá gestionar toma la información relacionada a los labolatorios de la sede Prado Alto de la Corporación Universitaria del Huila.'
-        }
-    }
-
-}
+  name: 'MyComponent',
+  data() {
+    return {
+      titulo: 'Sistema de Gestión Laboratorio',
+      descripcion:
+        'Este sistema permite gestionar la información relacionada con los laboratorios de la sede Prado Alto de la Corporación Universitaria del Huila.'
+    };
+  }
+};
 </script>
 
-<style>
-
-.row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 5rem; /* Espacio inferior */
-}
-
+<style scoped>
 .content-wrapper {
-    background-color: #f9f9f9; /* Fondo claro */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .laboratorio-img {
-    width: 60vh;
-    max-width: 100%; /* Asegúrate de que la imagen no sobresalga del contenedor */
-    border-radius: 8px; /* Bordes redondeados */
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-    .content-wrapper {
-        margin-bottom: 20px;
-    }
-    
-    .row {
-        flex-direction: column;
-    }
-}
-.menu-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Espacio entre los botones */
+.btn-outline-primary {
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
 </style>
